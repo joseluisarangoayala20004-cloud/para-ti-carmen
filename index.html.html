@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Ti 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 35px;
+      border-radius: 25px;
+      text-align: center;
+      max-width: 700px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+      animation: aparecer 1.5s ease;
+    }
+
+    h1 {
+      color: #e11d48;
+      font-size: 2.3rem;
+    }
+
+    p {
+      color: #444;
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+    .heart {
+      font-size: 60px;
+      animation: latido 1s infinite alternate;
+      margin: 10px 0;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    button {
+      background: #e11d48;
+      color: white;
+      border: none;
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 8px;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      background: #be123c;
+    }
+
+    .mensaje {
+      display: none;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #be123c;
+      font-size: 1.2rem;
+    }
+
+    @keyframes latido {
+      from { transform: scale(1); }
+      to { transform: scale(1.25); }
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Para ti, MI BEBÉ HERMOSA, CARMEN JHULIZA TAIPE LLACTAHUAMAN 💝</h1>
+
+    <div class="heart">❤️</div>
+
+    <p>
+      Desde que llegaste a mi vida, todo se siente distinto.  
+      Me gustas más de lo que imaginas… y esta pequeña página  
+      es solo una forma de decirte lo especial que eres para mí.
+    </p>
+
+    <!-- 🎵 Música -->
+    <audio id="musica" src="OV7-—-Te-Quiero-Tanto_-Tanto-_Letra_.mp3"></audio>
+    <button onclick="reproducir()">▶ Reproducir música</button>
+    <button onclick="pausar()">⏸ Pausar música</button>
+
+    <!-- 📸 Galería de fotos -->
+    <div class="galeria">
+      <img src="CARMEN.png" alt="Foto 1">
+      <img src="CARMEN1.jpg" alt="Foto 2">
+      <img src="CARMEN2.jpg" alt="Foto 3">
+      <img src="CARMEN3.jpg" alt="Foto 4">
+    </div>
+
+    <button onclick="mostrarMensaje()">Toca aquí 💌</button>
+
+    <div class="mensaje" id="mensaje">
+      Te quiero… tanto, tanto, tantoooo 💖  
+      <br><br>
+      Con cariño, JOSE LUIS ARANGO AYALA
+    </div>
+  </div>
+
+  <script>
+    const musica = document.getElementById("musica");
+
+    function reproducir() {
+      musica.play();
+    }
+
+    function pausar() {
+      musica.pause();
+    }
+
+    function mostrarMensaje() {
+      document.getElementById("mensaje").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
